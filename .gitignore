@@ -5,3 +5,17 @@ __pycache__/
 _run/
 _debug/
 *.tmp
+
+# generated test outputs and fixtures (rebuilt by the tests)
+smoke_test_run/
+synthetic_redbox_test/
+# never commit exam PDFs, extracted crops/datasets, model weights, or secrets
+*.pdf
+*.xlsx
+*.pt
+*.pth
+recovered_crops*/
+extracted_output/
+.env
+*.key
+.venv/
