@@ -80,3 +80,19 @@ python extraction_pipeline.py --input path/to/pdfs --output path/to/output
 # 3. Run verification smoke test
 python smoke_test.py
 ```
+
+---
+
+## Repository layout (consolidated)
+
+This is the single canonical project folder. It contains two generations of work:
+
+| Area | Files | Purpose |
+|---|---|---|
+| Original red-box pipeline | `extraction_pipeline.py`, `red_box_extractor.py`, `jee_neet_pdf_image_extraction.ipynb`, `smoke_test.py`, `test_edge_cases.py`, `test_red_box_pipeline.py`, `append_stage2_cells.py`, `update_notebook_stage2.py` | The first extraction pipeline and its notebook (unchanged by the consolidation). |
+| Detector + holdout work (Phase A) | `figx/`, `tests/`, `tools/`, `build_nb.py`, `build_scan_nb.py`, `jee_neet_figx_v4.ipynb`, `holdout_scan.ipynb`, `REPORT.md` | PDF-native figure detector, read-only holdout scan, pinned detector baseline. |
+| Trusted detector baseline | `figx/baseline_v4.json`, tag `detector-baseline-v4` -> commit `890c66da4bd362b11723e197aaa6e4f20f4d79ed` | Pinned fingerprint of the v4 detector. Check with `python tools/make_baseline.py verify`. |
+
+Run the tests: `python -m pytest tests` (detector/holdout; needs the reference PDFs in `FIGX_REF_DIR` or `~/Downloads` for the real-data tests, which are skipped if absent), `python -m pytest test_edge_cases.py test_red_box_pipeline.py` (original pipeline), and `python smoke_test.py`.
+
+Never committed (see `.gitignore`): exam PDFs, extracted crops/datasets, generated `_run/`, `_debug/`, `smoke_test_run/`, `synthetic_redbox_test/`, model weights, secrets.
