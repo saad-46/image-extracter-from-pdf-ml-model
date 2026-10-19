@@ -1,0 +1,13 @@
+{
+ "spec": "figx-fp-v2",
+ "files": {
+  "core.py": "7363aff7cf8331aba27ee5ad584a6a38599a7108d0f2c8621d623db77fee2197",
+  "detect.py": "14af63a3fc1bffe5ed47f327cfbc080b3fbc12c003b1563b1cb788cd3328b42c"
+ },
+ "config": "8ca9444a073717683b8b770a280c69574bf31a84e9f411a96e20acf74e74ed4f",
+ "combined": "069368f0ad53c256440369774ccffc3b391a6a64c0120675278bf0ef9845c4bf",
+ "source": {
+  "notebook": "jee_neet_figx_v4.ipynb",
+  "notebook_sha256": "b85b4f5e203a5057d4fc7709b206f2c7c30819a2c888aeb813556f89c99bbcd0"
+ }
+}

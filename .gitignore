@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+# generated outputs from copyrighted exam PDFs; never commit
+_run/
+_debug/
+*.tmp
